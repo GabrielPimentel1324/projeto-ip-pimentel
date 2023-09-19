@@ -2,6 +2,7 @@ from typing import Any
 import pygame
 from graphics import Superficie
 from settings import *
+from novos_mapas import MAPA
 # Aqui é onde seria a criação de mapa
 
 pygame.init()

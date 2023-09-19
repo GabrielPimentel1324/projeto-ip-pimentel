@@ -1,6 +1,8 @@
 from graphics import Superficie
 from settings import *
 from level import Mapa
+from novos_mapas import *
+import random
 import pygame
 pygame.init()
 
@@ -11,12 +13,13 @@ class Player:
     pontuacao = 0
     vida = 3
     # Posição inicial do jogador
-    x_jogador = LARGURA_TELA/2
-    y_jogador = ALTURA_TELA/2
+   
     # Movimento
     velocidade = 7.5
     olhando_direcao = 'baixo'
-    def __init__(self):
+    def __init__(self, mapa):
+        local_spawn = mapa.tipo_tiles['Chão'][random.randint(0, len(mapa.tipo_tiles['Chão']) - 1)].hitbox
+        self.y_jogador, self.x_jogador = local_spawn.top, local_spawn.left
         self.imagem = pygame.image.load('projeto/assets\playerfront-placeholder.png')
         self.alfa = 255
         self.ataque_alfa = 255

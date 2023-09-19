@@ -30,7 +30,7 @@ class Game:
         for _ in range(numero_inimigos):
             inimigo = Enemy(mapa)
             Enemy.lista_inimigos_presentes.append(inimigo)
-        jogador = Player()
+        jogador = Player(mapa)
         espada = Espada()
         escudo = Escudo()
         # Rodando o loop do jogo
